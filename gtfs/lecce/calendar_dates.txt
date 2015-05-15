@@ -1,2 +1,0 @@
-service_id,date,exception_type
-WW,20150514,1
