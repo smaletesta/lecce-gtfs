@@ -1,0 +1,2 @@
+agency_id, agency_name,agency_url,agency_timezone,agency_phone,agency_lang
+SGM,S.G.M. SpA Societa' a Gestione Multipla,http://www.sgmlecce.it/,Europe/Rome,+39 0832 340898,it

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><%= pageTitle %> – UlmApi.de</title>
+    <meta name="description" content="LiveMap">
+    <meta name="author" content="UlmApi.de">
+    
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="/css/bootstrap-1.1.1.min.css" rel="stylesheet">
+    <link href="/css/livemap.css" rel="stylesheet">
+    
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    
+    <% if (type == "map") { %>
+	<link rel="stylesheet" href="/css/leaflet.css" />
+	<script type="text/javascript" src="/js/leaflet.js"></script>
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="/js/clock.js"></script>
+	<script type="text/javascript" src="/js/livemap.js"></script>
+    <% } %>
+    
+  </head>
+
+  <body>
+
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <h3><a href="/map">Lecce LiveMap</a></h3>
+          <ul>
+            <li <% if (type == "map") { %>class="active" <% } %>><a href="/map">Map</a></li>
+            <li <% if (type == "about") { %>class="active" <% } %>><a href="/about">About</a></li>
+          </ul>
+		  <span id="clock"></span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container">
+     <div class="hero-unit">
+        <h1>LiveMap adapted by Cortese</h1>
+        <p>Real-time visualization of public transportation in the City of Pavia, Italy.</p>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span11">
+          <h2>What is this?</h2>
+          <p>This application visualizes public transportation vehicles moving through the City of Matera, Italy, Capital of Culture for 2019. Since the transport authority does not provide
+          a useable data feed, we decided to scrape the timetable data and converted them into the <a href="https://code.google.com/intl/de-DE/transit/spec/transit_feed_specification.html">
+          GTFS</a> format. GTFS files are provided by <b>@unMonastery</b>. We then implemented a simple GTFS parser which emulates the emission of real time event information (though it's based on the static data
+          we liberated from their timetable prison. We hope to eventually switch the backend event emitter to realtime data in the future. If anybody out there
+          knows someone working at the Stadtwerke Ulm, please prod them a little *nudge nudge*).
+          The events emitted by the GTFS parser are consumed by the web application, which renders a map and moves markers according to the estimated location of each vehicle.</p>
+          <h2>Why?</h2>
+          <p>This application is a contribution to the Node Knockout 2011 by <a href="http://ulmapi.de/">UlmApi.de</a> members.
+          We implemented this proof-of-concept prototype within two days. It is intended to demonstrate what is possible by mashing cool technology and open data
+          together, shaking it well and letting it boil for a while. It might also prove relaxing to watch. Except if you're using Firefox.</p>
+        </div>
+        <div class="span5">
+          <h2>Technologies used</h2>
+			 <dl>
+		        <dt>node.js</dt>
+        		<dd>General platform</dd>
+		        <dt>express.js</dt>
+        		<dd>Middleware framework</dd>
+		        <dt>Socket.IO</dt>
+        		<dd>Messaging library</dd>
+		        <dt>Leaflet</dt>
+        		<dd>JavaScript mapping library</dd>
+		        <dt>bootstrap</dt>
+        		<dd>CSS template</dd>
+        	 </dl>
+       </div>
+      </div>
+      <div class="row">
+        <div class="span11">      
+          <h2>Team</h2>
+			 <dl>
+		        <dt>Michael Müller</dt>
+        		<dd></dd>
+		        <dt>Simon Fuchs</dt>
+        		<dd></dd>
+		        <dt>Benjamin Erb</dt>
+        		<dd></dd>
+		        <dt>Stefan Kaufmann</dt>
+        		<dd></dd>
+        	 </dl>
+        </div>
+        <div class="span5">
+          <h2>What is UlmApi.de?</h2>
+          <p>We are a group of open data enthusiasts, mostly from <a href="http://www.uulm.de">ulm university.</a></p>
+       </div>
+      </div>
+</div>
+
+
+	<div id="warning" class="modal">
+        <div class="modal-header">
+          <h3>It's late night around here!</h3>
+          <a onclick="javascript:$('#warning').hide();" class="close" href="#">×</a>
+        </div>
+        <div class="modal-body">
+          <p>Please keep in mind that Ulm is on UTC+2, and it's not quite Berlin in terms of nightly public transportation service. On this map, we let the night buses run every night instead of only at the weekends, but still... Just check back later during the day to see the magic, or <a href="https://secure.wikimedia.org/wikipedia/en/wiki/Ulmer_M%C3%BCnster">read a bit about that ridiculously ginormous 
+          church</a> we have over here.</p>
+        </div>
+        <div class="modal-footer">
+          <a class="btn primary" href="#" onclick="javascript:$('#warning').hide();">Close</a>
+        </div>
+      </div>
+
+
+  </body>
+</html>
