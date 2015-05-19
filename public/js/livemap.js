@@ -119,9 +119,9 @@ L.Icon.Label.Default = L.Icon.Label.extend({
 	});
 
 	var Thunderforest_Transport = L.tileLayer('http://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png', {
-		attribution: '&copy; <a href="http://www.opencyclemap.org">OpenCycleMap</a>, Created by @cortesefed from Bus Timetables by <a href="http://dati.comune.lecce.it/dataset?q=sgm&sort=score+desc%2C+metadata_modified+desc" />SGM Lecce</a>, Lic. CC-By OpenData Lecce',
-		maxZoom: 19
-	});
+                attribution: '&copy; <a href="http://www.opencyclemap.org">OpenCycleMap</a>, Created by @cortesefed from Bus Timetables by <a href="http://dati.comune.lecce.it/dataset?q=sgm&sort=score+desc%2C+metadata_modified+desc" />SGM Lecce</a>, Lic. CC-By OpenData Lecce',
+                maxZoom: 19
+        });
 
 	var map = new L.Map('map', {
 		center : new L.LatLng(40.3570373,18.1718482),
@@ -230,7 +230,7 @@ L.Icon.Label.Default = L.Icon.Label.extend({
 
 		  	for(var i in data){
 myStyle = {
-    "color": get_random_color() ,
+    "color": data[i].color ,
     "weight": 5,
     "opacity": 0.65
 };
