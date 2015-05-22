@@ -3,3 +3,4 @@ R12,12,Linea 12 Festiva Borgo Pace - CityModa,Borgo Pace - CityModa - Stazione F
 R30,30,Linea 30 Circolare Stazione FF.SS. - Viale Leopardi,Stazione FF.SS. - Leopardi,3,24458B,
 R21,21,Linea 21 CityModa - Viale XXV Luglio,CityModa - XXV Luglio,3,66CC33,
 R22,22,Linea 22 Viale Cavallotti - Motorizzazione,Cavallotti - Motorizzazione - City Terminal,3,66CCFF,
+R23,23,Linea 23 Tempi Nuovi - Viale Cavallotti,Tempi Nuovi - Cavallotti,3,66CCFF,
