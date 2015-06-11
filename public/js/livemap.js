@@ -248,7 +248,7 @@ style: myStyle
 
 
 
-	var socket = io.connect('http://livemap-lecceopendata.rhcloud.com:8000');
+	var socket = io.connect('/');
 
 	var knownTrips = {};
 

@@ -91,16 +91,9 @@ var gtfs = Gtfs(process.env.GTFS_PATH || path.join(__dirname,"gtfs",gtfsdir), fu
 			io.sockets.emit('event', pushData);
 		});
 
-		//server.listen(process.env.PORT || 8080);
+		server.listen(process.env.PORT || 7777);
 		//var appServer = app.listen(parseInt(process.env.PORT) || 7777);
-		//console.log('Listening on ' + server.address().port);
-
-		var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
-		var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
-
-		server.listen(server_port, server_ip_address, function(){
-  			console.log("Listening on " + server_ip_address + ", server_port " + server_port)
-		});
+		console.log('Listening on ' + server.address().port);
 
 	});
 
